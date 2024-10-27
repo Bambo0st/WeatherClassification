@@ -17,9 +17,7 @@ This project is part of the AI-511 Machine Learning course at the International 
 2. [Data Preprocessing](#data-preprocessing)
 3. [Model Training and Testing](#model-training-and-testing)
 4. [XGBoost Accuracy Progression](#xgboost-accuracy-progression)
-5. [Installation](#installation)
-6. [Usage](#usage)
-7. [Conclusion](#conclusion)
+5. [Results](#Results)
 
 ## Exploratory Data Analysis (EDA)
 
