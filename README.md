@@ -1,10 +1,10 @@
-# Weather Classification 
+# Weather Classification Project
 
-This project focuses on classifying weather conditions using machine learning techniques, based on exploratory data analysis (EDA), preprocessing, and model optimization.
+This project focuses on classifying weather conditions using machine learning techniques, specifically emphasizing data preprocessing and model optimization to enhance accuracy.
 
 ## Project Overview
 
-This project is part of the AI-511 Machine Learning course, developed as an assignment at the International Institute of Information Technology Bangalore. The goal is to create an accurate weather classification model by exploring various machine learning algorithms and optimizing their hyperparameters.
+This project is part of the AI-511 Machine Learning course at the International Institute of Information Technology Bangalore. The goal is to build a highly accurate weather classification model by experimenting with multiple machine learning models and refining preprocessing techniques.
 
 **Team Members:**
 - Achintya Harsha (IMT2021525)
@@ -16,22 +16,25 @@ This project is part of the AI-511 Machine Learning course, developed as an assi
 1. [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
 2. [Data Preprocessing](#data-preprocessing)
 3. [Model Training and Testing](#model-training-and-testing)
-4. [Results](#results)
+4. [XGBoost Accuracy Progression](#xgboost-accuracy-progression)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [Conclusion](#conclusion)
 
 ## Exploratory Data Analysis (EDA)
 
-1. **Handling Null Values:** Columns with a high percentage of null values (e.g., Sunshine and Evaporation) were dropped due to their potential to degrade model accuracy.
-2. **Feature Distribution:** Distribution of both numerical and categorical features was analyzed to remove low-variance features.
-3. **Correlation Analysis:** Features with low correlation with the target variable were removed.
-4. **Outlier Detection:** Boxplots were used to detect and remove outliers to improve data quality.
+1. **Handling Null Values:** Columns with a high percentage of null values (e.g., Sunshine and Evaporation) were dropped to avoid degrading model accuracy.
+2. **Feature Distribution:** The spread of values in numerical and categorical features was analyzed, and low-variance features were removed.
+3. **Correlation Analysis:** Features with low correlation to the target variable were excluded.
+4. **Outlier Detection:** Outliers were identified and removed using boxplots, improving the quality of data.
 
 ## Data Preprocessing
 
-1. **Date Decomposition:** The date column was split into day, month, and year to simplify categorical values.
-2. **Location-Based Probability Calculation:** A probability metric was computed for each location, indicating the likelihood of a specific weather task being true.
-3. **Seasonal Categorization:** Data was divided by seasons, with imputation based on seasonal averages for missing values.
-4. **Upsampling and Downsampling:** Imbalance in the target values was addressed by balancing class distributions through upsampling and downsampling.
-5. **Encoding:** Label encoding was used for categorical data, achieving higher accuracy than one-hot encoding.
+1. **Date Decomposition:** The date column was split into day, month, and year, simplifying categorical values.
+2. **Location-Based Probability Calculation:** A probability metric was calculated for each location to reflect the likelihood of specific weather conditions.
+3. **Seasonal Categorization:** Data was categorized by season, and imputation was performed based on seasonal averages.
+4. **Upsampling and Downsampling:** Class imbalance was addressed through upsampling and downsampling, balancing target values.
+5. **Encoding:** Label encoding and categorical encoding were applied, with categorical encoding yielding higher accuracy.
 
 ## Model Training and Testing
 
@@ -43,11 +46,16 @@ The following machine learning models were evaluated:
 - **AdaBoost Classifier**
 - **XGBoost Classifier (Best Model)**
 
-### XGBoost Model
+## XGBoost Accuracy Progression
 
-The XGBoost model achieved the highest accuracy (68.13%) with optimal preprocessing and tuning:
-- Initial accuracy: 64.40%
-- Final accuracy after seasonal categorization and early stopping: 68.13%
+XGBoost demonstrated the highest performance on the dataset, with accuracy improvements as follows:
+
+- **64.40%** - Basic XGBoost with minimal preprocessing and no hyperparameter tuning.
+- **65.52%** - Improved by dropping columns with low correlation and variance.
+- **66.82%** - Handled class imbalance through upsampling and downsampling.
+- **67.18%** - Replaced label encoding with categorical encoding.
+- **67.97%** - Implemented seasonal data categorization.
+- **68.13%** - Applied early stopping in XGBoost to prevent overfitting.
 
 ## Results
 
